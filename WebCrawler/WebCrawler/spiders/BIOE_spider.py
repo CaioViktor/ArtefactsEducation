@@ -1,3 +1,5 @@
+#run:
+#scrapy runspider WebCrawler/spiders/BIOE_spider.py -o output/BIOE/bioe.js -t json
 import scrapy
 
 urlbase = "http://objetoseducacionais2.mec.gov.br"
@@ -7,7 +9,7 @@ class BIOESpider(scrapy.Spider):
 
 	def start_requests(self):
 		urls = [
-			'http://objetoseducacionais2.mec.gov.br/browse?order=ASC&rpp=100&sort_by=1&page=1&etal=-1&type=title'
+			'http://objetoseducacionais2.mec.gov.br/browse?order=ASC&rpp=100&sort_by=2&page=1&etal=-1&type=dateissued'
 		]
 		for url in urls:
 			yield scrapy.Request(url = url, callback = self.parse)
