@@ -10,7 +10,7 @@ class LUMEpider(scrapy.Spider):
 
 	def start_requests(self):
 		urls = [
-			'https://lume.ufrgs.br/browse?rpp=100&sort_by=2&type=dateissued&offset=177260&etal=-1&order=ASC'
+			'https://lume.ufrgs.br/browse?rpp=100&sort_by=2&type=dateissued&offset=0&etal=-1&order=ASC'
 		]
 		for url in urls:
 			yield scrapy.Request(url = url, callback = self.parse)
